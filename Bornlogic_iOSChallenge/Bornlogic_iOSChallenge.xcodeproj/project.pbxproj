@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2BA64F192BF0DFF20074C3B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F182BF0DFF20074C3B4 /* AppDelegate.swift */; };
-		2BA64F1B2BF0DFF20074C3B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F1A2BF0DFF20074C3B4 /* SceneDelegate.swift */; };
-		2BA64F1D2BF0DFF20074C3B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F1C2BF0DFF20074C3B4 /* ViewController.swift */; };
-		2BA64F202BF0DFF20074C3B4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2BA64F1F2BF0DFF20074C3B4 /* Base */; };
+		2BA64F1D2BF0DFF20074C3B4 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F1C2BF0DFF20074C3B4 /* NewsListViewController.swift */; };
 		2BA64F222BF0DFF40074C3B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA64F212BF0DFF40074C3B4 /* Assets.xcassets */; };
 		2BA64F252BF0DFF40074C3B4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2BA64F242BF0DFF40074C3B4 /* Base */; };
 		2BA64F302BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F2F2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests.swift */; };
 		2BA64F3A2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F392BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.swift */; };
 		2BA64F3C2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F3B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift */; };
+		2BA64F562BF0E7C90074C3B4 /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F552BF0E7C90074C3B4 /* NewsListView.swift */; };
+		2BA64F582BF107DE0074C3B4 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F572BF107DE0074C3B4 /* UIViewController + Extension.swift */; };
+		2BA64F5A2BF1083A0074C3B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F592BF1083A0074C3B4 /* Constants.swift */; };
+		2BA64F5C2BF10D870074C3B4 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F5B2BF10D870074C3B4 /* NewsListViewModel.swift */; };
+		2BA64F5E2BF10E550074C3B4 /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F5D2BF10E550074C3B4 /* NewsListTableViewCell.swift */; };
+		2BA64F602BF10ED30074C3B4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F5F2BF10ED30074C3B4 /* UIView + Extension.swift */; };
+		2BA64F622BF10F670074C3B4 /* NewsListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F612BF10F670074C3B4 /* NewsListCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +43,7 @@
 /* Begin PBXFileReference section */
 		2BA64F152BF0DFF10074C3B4 /* Bornlogic_iOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bornlogic_iOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA64F182BF0DFF20074C3B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2BA64F1A2BF0DFF20074C3B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2BA64F1C2BF0DFF20074C3B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2BA64F1F2BF0DFF20074C3B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BA64F1C2BF0DFF20074C3B4 /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		2BA64F212BF0DFF40074C3B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BA64F242BF0DFF40074C3B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BA64F262BF0DFF40074C3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,13 @@
 		2BA64F352BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bornlogic_iOSChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA64F392BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bornlogic_iOSChallengeUITests.swift; sourceTree = "<group>"; };
 		2BA64F3B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bornlogic_iOSChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2BA64F552BF0E7C90074C3B4 /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
+		2BA64F572BF107DE0074C3B4 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		2BA64F592BF1083A0074C3B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2BA64F5B2BF10D870074C3B4 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
+		2BA64F5D2BF10E550074C3B4 /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
+		2BA64F5F2BF10ED30074C3B4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		2BA64F612BF10F670074C3B4 /* NewsListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +109,11 @@
 		2BA64F172BF0DFF10074C3B4 /* Bornlogic_iOSChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				2BA64F182BF0DFF20074C3B4 /* AppDelegate.swift */,
-				2BA64F1A2BF0DFF20074C3B4 /* SceneDelegate.swift */,
-				2BA64F1C2BF0DFF20074C3B4 /* ViewController.swift */,
-				2BA64F1E2BF0DFF20074C3B4 /* Main.storyboard */,
-				2BA64F212BF0DFF40074C3B4 /* Assets.xcassets */,
-				2BA64F232BF0DFF40074C3B4 /* LaunchScreen.storyboard */,
-				2BA64F262BF0DFF40074C3B4 /* Info.plist */,
+				2BA64F522BF0E3320074C3B4 /* Utils */,
+				2BA64F512BF0E32D0074C3B4 /* Extensions */,
+				2BA64F502BF0E3290074C3B4 /* Networking */,
+				2BA64F4D2BF0E3010074C3B4 /* Features */,
+				2BA64F492BF0E2480074C3B4 /* Supporting */,
 			);
 			path = Bornlogic_iOSChallenge;
 			sourceTree = "<group>";
@@ -125,6 +133,77 @@
 				2BA64F3B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift */,
 			);
 			path = Bornlogic_iOSChallengeUITests;
+			sourceTree = "<group>";
+		};
+		2BA64F492BF0E2480074C3B4 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				2BA64F182BF0DFF20074C3B4 /* AppDelegate.swift */,
+				2BA64F232BF0DFF40074C3B4 /* LaunchScreen.storyboard */,
+				2BA64F212BF0DFF40074C3B4 /* Assets.xcassets */,
+				2BA64F262BF0DFF40074C3B4 /* Info.plist */,
+			);
+			name = Supporting;
+			sourceTree = "<group>";
+		};
+		2BA64F4C2BF0E2BB0074C3B4 /* News Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "News Details";
+			sourceTree = "<group>";
+		};
+		2BA64F4D2BF0E3010074C3B4 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				2BA64F4E2BF0E30B0074C3B4 /* News List */,
+				2BA64F4C2BF0E2BB0074C3B4 /* News Details */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		2BA64F4E2BF0E30B0074C3B4 /* News List */ = {
+			isa = PBXGroup;
+			children = (
+				2BA64F632BF10F850074C3B4 /* Cell */,
+				2BA64F1C2BF0DFF20074C3B4 /* NewsListViewController.swift */,
+				2BA64F552BF0E7C90074C3B4 /* NewsListView.swift */,
+				2BA64F5B2BF10D870074C3B4 /* NewsListViewModel.swift */,
+			);
+			name = "News List";
+			sourceTree = "<group>";
+		};
+		2BA64F502BF0E3290074C3B4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		2BA64F512BF0E32D0074C3B4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2BA64F572BF107DE0074C3B4 /* UIViewController + Extension.swift */,
+				2BA64F5F2BF10ED30074C3B4 /* UIView + Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		2BA64F522BF0E3320074C3B4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2BA64F592BF1083A0074C3B4 /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		2BA64F632BF10F850074C3B4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2BA64F5D2BF10E550074C3B4 /* NewsListTableViewCell.swift */,
+				2BA64F612BF10F670074C3B4 /* NewsListCellView.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +312,6 @@
 			files = (
 				2BA64F222BF0DFF40074C3B4 /* Assets.xcassets in Resources */,
 				2BA64F252BF0DFF40074C3B4 /* Base in Resources */,
-				2BA64F202BF0DFF20074C3B4 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +336,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BA64F1D2BF0DFF20074C3B4 /* ViewController.swift in Sources */,
+				2BA64F5A2BF1083A0074C3B4 /* Constants.swift in Sources */,
+				2BA64F1D2BF0DFF20074C3B4 /* NewsListViewController.swift in Sources */,
+				2BA64F562BF0E7C90074C3B4 /* NewsListView.swift in Sources */,
+				2BA64F582BF107DE0074C3B4 /* UIViewController + Extension.swift in Sources */,
+				2BA64F622BF10F670074C3B4 /* NewsListCellView.swift in Sources */,
+				2BA64F602BF10ED30074C3B4 /* UIView + Extension.swift in Sources */,
 				2BA64F192BF0DFF20074C3B4 /* AppDelegate.swift in Sources */,
-				2BA64F1B2BF0DFF20074C3B4 /* SceneDelegate.swift in Sources */,
+				2BA64F5E2BF10E550074C3B4 /* NewsListTableViewCell.swift in Sources */,
+				2BA64F5C2BF10D870074C3B4 /* NewsListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +381,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2BA64F1E2BF0DFF20074C3B4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2BA64F1F2BF0DFF20074C3B4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2BA64F232BF0DFF40074C3B4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,9 +523,8 @@
 				INFOPLIST_FILE = Bornlogic_iOSChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,9 +554,8 @@
 				INFOPLIST_FILE = Bornlogic_iOSChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
