@@ -7,9 +7,12 @@
 
 import UIKit
 
+protocol NewsListViewDelegate: UITableViewDelegate, UITableViewDataSource {
+}
+
 class NewsListView: UIView {
-    private let tableView = UITableView()
-    private let spinner = UIActivityIndicatorView(style: .large)
+    public let tableView = UITableView()
+    public let spinner = UIActivityIndicatorView(style: .large)
 
     override init(frame: CGRect) {
         super.init(frame: frame)

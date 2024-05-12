@@ -19,6 +19,7 @@ class NewsListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        signProtocols()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,5 +27,29 @@ class NewsListViewController: UIViewController {
         configureNavBar(title: Constants.mainTitle)
     }
 
+}
+
+extension NewsListViewController {
+    private func signProtocols() {
+        listView?.tableView.delegate = self
+        listView?.tableView.dataSource = self
+    }
+}
+
+extension NewsListViewController: NewsListViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.numberOfRowsInSection
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = viewModel.getCellForRow(on: tableView, at: indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        viewModel.heightForRowAt
+    }
+    
+    
 }
 
