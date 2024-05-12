@@ -10,7 +10,7 @@ import UIKit
 class NewsListViewModel {
     // MARK: Table View Methods
     public var numberOfRowsInSection: Int {
-        4
+        3
     }
     
     public func getCellForRow(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
@@ -20,6 +20,6 @@ class NewsListViewModel {
     }
     
     public var heightForRowAt: CGFloat {
-        100
+        450
     }
 }

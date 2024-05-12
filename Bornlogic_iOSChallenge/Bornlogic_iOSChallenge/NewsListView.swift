@@ -29,7 +29,7 @@ class NewsListView: UIView {
 extension NewsListView {
     private func createElements() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .tertiarySystemBackground
+        tableView.backgroundColor = .secondarySystemBackground
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
         tableView.allowsSelection = true
