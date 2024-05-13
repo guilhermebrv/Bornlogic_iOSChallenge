@@ -46,7 +46,7 @@ extension NewsListView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            tableView.topAnchor.constraint(equalTo: topAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),

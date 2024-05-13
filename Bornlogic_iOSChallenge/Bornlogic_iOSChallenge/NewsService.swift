@@ -33,11 +33,7 @@ class NewsService: NewsServiceProtocol {
         let (data, response) = try await URLSession.shared.data(from: url)
         guard let response = response as? HTTPURLResponse,
             response.statusCode == 200 else { throw NewsError.invalidResponse }
-        
-        if let jsonString = String(data: data, encoding: .utf8) {
-            print("Received JSON string: \(jsonString)")
-        }
-        
+
         return try decodeData(data)
     }
     

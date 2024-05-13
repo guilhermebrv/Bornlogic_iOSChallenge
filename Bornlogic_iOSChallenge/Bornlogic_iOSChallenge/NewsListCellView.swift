@@ -61,20 +61,18 @@ extension NewsListCellView {
         titleLabel.textColor = .label
         titleLabel.textAlignment = .justified
         titleLabel.numberOfLines = 2
-        titleLabel.text = "Elon Musk Says Billionaire Investor Warren Buffett Should Buy Tesla Stock. Here's Why He Absolutely, Positively Won't."
         
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         descriptionLabel.textAlignment = .justified
         descriptionLabel.textColor = .label
         descriptionLabel.numberOfLines = 3
-        descriptionLabel.text = "Title lorem ipsum dolor sit amet, consectetur adipiscing elit. More text here and I need to make this text bigger to see how it will look."
         
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
         authorLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
         authorLabel.textColor = .label
+        authorLabel.textAlignment = .right
         authorLabel.numberOfLines = 1
-        authorLabel.text = "by Guilherme Viana"
     }
     
     private func configConstraints() {

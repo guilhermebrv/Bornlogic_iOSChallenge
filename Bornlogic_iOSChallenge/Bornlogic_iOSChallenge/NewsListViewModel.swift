@@ -12,11 +12,9 @@ protocol NewsViewModelDelegate: AnyObject {
     func newsDataDidFailWithError(_ error: NewsError)
 }
 
-class NewsListViewModel: ObservableObject {
+class NewsListViewModel {
     weak var delegate: NewsViewModelDelegate?
     var newsData: [Article]?
-    var isLoading = false
-    var error: NewsError?
     
     private let newsService: NewsServiceProtocol
 
@@ -25,26 +23,24 @@ class NewsListViewModel: ObservableObject {
     }
 
     func loadNews() {
-        isLoading = true
         Task {
             do {
                 let data = try await newsService.fetchData()
-                let filteredArticles = data?.articles.filter { $0.title != "[Removed]" }
+                let filteredArticles = filterData(on: data, containing: "[Removed]")
                 DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-                    self.newsData = filteredArticles
-                    self.isLoading = false
-                    self.delegate?.newsDataDidUpdate()
+                    self?.newsData = filteredArticles
+                    self?.delegate?.newsDataDidUpdate()
                 }
             } catch let error as NewsError {
                 DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-                    self.error = error
-                    self.isLoading = false
-                    self.delegate?.newsDataDidFailWithError(error)
+                    self?.delegate?.newsDataDidFailWithError(error)
                 }
             }
         }
+    }
+    
+    private func filterData(on data: NewsData?, containing expression: String) -> [Article]? {
+        return data?.articles.filter { $0.title != expression }
     }
     
     // MARK: Table View Methods

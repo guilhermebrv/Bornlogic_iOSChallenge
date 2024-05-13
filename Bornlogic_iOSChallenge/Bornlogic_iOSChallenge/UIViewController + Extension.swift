@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    func configureNavBar(title: String) {
+    public func configureNavBar(title: String) {
         setNavBarTitle(with: title)
         setNavBarAppearance()
     }

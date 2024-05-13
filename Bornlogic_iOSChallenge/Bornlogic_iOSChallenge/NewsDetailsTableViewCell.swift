@@ -1,21 +1,16 @@
 //
-//  NewsListTableViewCell.swift
+//  NewsDetailsTableViewCell.swift
 //  Bornlogic_iOSChallenge
 //
-//  Created by Guilherme Viana on 12/05/2024.
+//  Created by Guilherme Viana on 13/05/2024.
 //
 
 import UIKit
 
-protocol CellDataDelegate: AnyObject {
-    func setupCellContent(with article: Article?)
-    func setupImages(from urlString: String)
-}
-
-class NewsListTableViewCell: UITableViewCell {
-    static let identifier = String(describing: NewsListTableViewCell.self)
+class NewsDetailsTableViewCell: UITableViewCell {
+    static let identifier = String(describing: NewsDetailsTableViewCell.self)
     private var imageDownloader: ImageDownloader?
-    private let cellView = NewsListCellView()
+    private let cellView = NewsDetailsCellView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,17 +25,17 @@ class NewsListTableViewCell: UITableViewCell {
         contentView.addSubview(cellView)
         cellView.pin(to: contentView)
     }
+
 }
 
-extension NewsListTableViewCell: CellDataDelegate {
-    public func setupCellContent(with article: Article?) {
+extension NewsDetailsTableViewCell: CellDataDelegate {
+    func setupCellContent(with article: Article?) {
         setupImages(from: article?.urlToImage ?? "")
-        cellView.titleLabel.text = article?.title
-        cellView.authorLabel.text = article?.author
-        cellView.descriptionLabel.text = article?.description
+        cellView.dateLabel.text = article?.publishedAt.description
+        cellView.contentLabel.text = article?.content
     }
     
-    public func setupImages(from urlString: String) {
+    func setupImages(from urlString: String) {
         imageDownloader = ImageDownloader()
         
         Task {
