@@ -14,7 +14,7 @@ protocol NewsViewModelDelegate: AnyObject {
 
 class NewsListViewModel: ObservableObject {
     weak var delegate: NewsViewModelDelegate?
-    var newsData: NewsData?
+    var newsData: [Article]?
     var isLoading = false
     var error: NewsError?
     
@@ -29,9 +29,10 @@ class NewsListViewModel: ObservableObject {
         Task {
             do {
                 let data = try await newsService.fetchData()
+                let filteredArticles = data?.articles.filter { $0.title != "[Removed]" }
                 DispatchQueue.main.async { [weak self] in
                     guard let self else { return }
-                    self.newsData = data
+                    self.newsData = filteredArticles
                     self.isLoading = false
                     self.delegate?.newsDataDidUpdate()
                 }
@@ -48,13 +49,13 @@ class NewsListViewModel: ObservableObject {
     
     // MARK: Table View Methods
     public var numberOfRowsInSection: Int {
-        newsData?.articles.count ?? 0
+        newsData?.count ?? 0
     }
     
     public func getCellForRow(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsListTableViewCell.identifier,
                                                  for: indexPath) as? NewsListTableViewCell
-        cell?.setupCellContent(with: newsData?.articles[indexPath.row])
+        cell?.setupCellContent(with: newsData?[indexPath.row])
         return cell ?? UITableViewCell()
     }
     
