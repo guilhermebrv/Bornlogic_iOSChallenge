@@ -8,5 +8,5 @@
 import Foundation
 
 struct Constants {
-    static let mainTitle = "News"
+    static let MAIN_TITLE = "News"
 }

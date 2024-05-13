@@ -22,8 +22,10 @@ class NewsListTableViewCell: UITableViewCell {
 }
 
 extension NewsListTableViewCell {
-    public func setupCellContent() {
-        
+    public func setupCellContent(with article: Article?) {
+        cellView.titleLabel.text = article?.title
+        cellView.authorLabel.text = article?.author
+        cellView.descriptionLabel.text = article?.description
     }
     private func configScreen() {
         contentView.addSubview(cellView)

@@ -10,7 +10,6 @@ import UIKit
 class NewsListCellView: UIView {
     let bgView = UIView()
     let stackView = UIStackView()
-    let nameLabel = UILabel()
     let imageView = UIImageView()
     let titleLabel = UILabel()
     let descriptionLabel = UILabel()
@@ -36,7 +35,6 @@ extension NewsListCellView {
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(descriptionLabel)
-        bgView.addSubview(nameLabel)
         bgView.addSubview(authorLabel)
     }
     
@@ -44,21 +42,14 @@ extension NewsListCellView {
         bgView.translatesAutoresizingMaskIntoConstraints = false
         bgView.backgroundColor = .tertiarySystemBackground
         bgView.layer.cornerRadius = 10
-        bgView.layer.shadowColor = UIColor.black.cgColor
-        bgView.layer.shadowOpacity = 0.5
+        bgView.layer.shadowColor = UIColor.label.cgColor
+        bgView.layer.shadowOpacity = 0.3
         bgView.layer.shadowOffset = .zero
-        bgView.layer.shadowRadius = 5
+        bgView.layer.shadowRadius = 3
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 16
-        
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.font = UIFont.preferredFont(forTextStyle: .headline)
-        nameLabel.textColor = .label
-        nameLabel.numberOfLines = 0
-        nameLabel.text = "Name"
-        nameLabel.textAlignment = .justified
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -70,20 +61,20 @@ extension NewsListCellView {
         titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
         titleLabel.textColor = .label
         titleLabel.textAlignment = .justified
-        titleLabel.numberOfLines = 0
+        titleLabel.numberOfLines = 2
         titleLabel.text = "Elon Musk Says Billionaire Investor Warren Buffett Should Buy Tesla Stock. Here's Why He Absolutely, Positively Won't."
         
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         descriptionLabel.textAlignment = .justified
         descriptionLabel.textColor = .label
-        descriptionLabel.numberOfLines = 0
+        descriptionLabel.numberOfLines = 2
         descriptionLabel.text = "Title lorem ipsum dolor sit amet, consectetur adipiscing elit. More text here and I need to make this text bigger to see how it will look."
         
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
         authorLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
         authorLabel.textColor = .label
-        authorLabel.numberOfLines = 0
+        authorLabel.numberOfLines = 1
         authorLabel.text = "by Guilherme Viana"
     }
     
@@ -98,10 +89,8 @@ extension NewsListCellView {
             stackView.leadingAnchor.constraint(equalTo: bgView.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: bgView.trailingAnchor, constant: -16),
             
-            nameLabel.bottomAnchor.constraint(equalTo: bgView.bottomAnchor, constant: -16),
-            nameLabel.leadingAnchor.constraint(equalTo: bgView.leadingAnchor, constant: 16),
-            
             authorLabel.bottomAnchor.constraint(equalTo: bgView.bottomAnchor, constant: -16),
+            authorLabel.leadingAnchor.constraint(equalTo: bgView.leadingAnchor, constant: 16),
             authorLabel.trailingAnchor.constraint(equalTo: bgView.trailingAnchor, constant: -16),
             
             imageView.heightAnchor.constraint(equalToConstant: 180),
