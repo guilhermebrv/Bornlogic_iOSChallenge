@@ -59,6 +59,6 @@ class NewsListViewModel: ObservableObject {
     }
     
     public func heightForRowAt() -> CGFloat {
-        380
+        400
     }
 }

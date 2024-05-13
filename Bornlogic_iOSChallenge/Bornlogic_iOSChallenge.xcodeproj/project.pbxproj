@@ -29,6 +29,7 @@
 		2BF4D9AB2BF2361400758732 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4D9AA2BF2361400758732 /* DetailsViewModel.swift */; };
 		2BF4D9B52BF238C000758732 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BF4D9B42BF238C000758732 /* Config.plist */; };
 		2BF4D9B72BF249EF00758732 /* APIKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4D9B62BF249EF00758732 /* APIKeyManager.swift */; };
+		2BF4D9B92BF24CC000758732 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4D9B82BF24CC000758732 /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		2BF4D9AA2BF2361400758732 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		2BF4D9B42BF238C000758732 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		2BF4D9B62BF249EF00758732 /* APIKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyManager.swift; sourceTree = "<group>"; };
+		2BF4D9B82BF24CC000758732 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			children = (
 				2BF4D9B62BF249EF00758732 /* APIKeyManager.swift */,
 				2BA64F592BF1083A0074C3B4 /* Constants.swift */,
+				2BF4D9B82BF24CC000758732 /* ImageDownloader.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				2BA64F622BF10F670074C3B4 /* NewsListCellView.swift in Sources */,
 				2BF4D99C2BF20D9F00758732 /* NewsService.swift in Sources */,
 				2BF4D99A2BF20CB900758732 /* NewsData.swift in Sources */,
+				2BF4D9B92BF24CC000758732 /* ImageDownloader.swift in Sources */,
 				2BA64F602BF10ED30074C3B4 /* UIView + Extension.swift in Sources */,
 				2BA64F192BF0DFF20074C3B4 /* AppDelegate.swift in Sources */,
 				2BF4D9B72BF249EF00758732 /* APIKeyManager.swift in Sources */,

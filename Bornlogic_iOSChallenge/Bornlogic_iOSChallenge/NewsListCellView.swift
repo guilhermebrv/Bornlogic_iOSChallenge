@@ -55,7 +55,6 @@ extension NewsListCellView {
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "photo")
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
@@ -68,7 +67,7 @@ extension NewsListCellView {
         descriptionLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         descriptionLabel.textAlignment = .justified
         descriptionLabel.textColor = .label
-        descriptionLabel.numberOfLines = 2
+        descriptionLabel.numberOfLines = 3
         descriptionLabel.text = "Title lorem ipsum dolor sit amet, consectetur adipiscing elit. More text here and I need to make this text bigger to see how it will look."
         
         authorLabel.translatesAutoresizingMaskIntoConstraints = false

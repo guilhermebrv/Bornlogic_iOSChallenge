@@ -26,7 +26,7 @@ class NewsService: NewsServiceProtocol {
             return nil
         }
         
-        let endpoint = "https://newsapi.org/v2/everything?q=tesla&from=2024-04-13&language=en&sortBy=publishedAt&apiKey=\(apiKey)"
+        let endpoint = "https://newsapi.org/v2/everything?q=taylor-swift&from=2024-04-13&language=en&sortBy=publishedAt&apiKey=\(apiKey)"
         
         guard let url = URL(string: endpoint) else { throw NewsError.invalidURL(endpoint) }
         
@@ -37,14 +37,19 @@ class NewsService: NewsServiceProtocol {
         if let jsonString = String(data: data, encoding: .utf8) {
             print("Received JSON string: \(jsonString)")
         }
-
+        
+        return try decodeData(data)
+    }
+    
+    private func decodeData(_ data: Data) throws -> NewsData? {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
         do {
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
             return try decoder.decode(NewsData.self, from: data)
         } catch {
-            print("Decoding error: \(error)")
             throw NewsError.invalidData
         }
     }
+
 }
