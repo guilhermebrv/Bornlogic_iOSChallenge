@@ -7,7 +7,7 @@
 
 import Foundation
 
-class APIKeyManager {
+struct APIKeyManager {
     static let shared = APIKeyManager()
     private var apiKey: String?
 
@@ -15,7 +15,7 @@ class APIKeyManager {
         loadApiKey()
     }
 
-    private func loadApiKey() {
+    private mutating func loadApiKey() {
         if let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
            let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
             apiKey = dict["APIKey"] as? String

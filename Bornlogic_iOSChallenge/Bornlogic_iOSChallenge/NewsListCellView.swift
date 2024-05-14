@@ -28,6 +28,24 @@ class NewsListCellView: UIView {
     }
 }
 
+extension NewsListCellView: ConfigurableView {
+    func setImage(with image: UIImage) {
+        if image != UIImage(systemName: "photo.on.rectangle.angled") {
+            imageView.image = image
+        } else {
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = image
+                .withTintColor(.secondarySystemBackground, renderingMode: .alwaysOriginal)
+        }
+    }
+    
+    func configure(with data: Article?) {
+        titleLabel.text = data?.title
+        authorLabel.text = data?.author
+        descriptionLabel.text = data?.description
+    }
+}
+
 extension NewsListCellView {
     private func createElements() {
         addSubview(bgView)
@@ -51,16 +69,16 @@ extension NewsListCellView {
         stackView.axis = .vertical
         stackView.spacing = 16
         
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .title2)
+        titleLabel.textColor = .label
+        titleLabel.textAlignment = .justified
+        titleLabel.numberOfLines = 2
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
-        
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
-        titleLabel.textColor = .label
-        titleLabel.textAlignment = .justified
-        titleLabel.numberOfLines = 2
         
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
@@ -69,7 +87,7 @@ extension NewsListCellView {
         descriptionLabel.numberOfLines = 3
         
         authorLabel.translatesAutoresizingMaskIntoConstraints = false
-        authorLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        authorLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
         authorLabel.textColor = .label
         authorLabel.textAlignment = .right
         authorLabel.numberOfLines = 1

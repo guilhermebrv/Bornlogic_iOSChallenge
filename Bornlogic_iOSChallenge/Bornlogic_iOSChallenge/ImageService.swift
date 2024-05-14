@@ -1,5 +1,5 @@
 //
-//  ImageDownloader.swift
+//  ImageService.swift
 //  Bornlogic_iOSChallenge
 //
 //  Created by Guilherme Viana on 13/05/2024.
@@ -7,13 +7,7 @@
 
 import UIKit
 
-enum ImageError: Error {
-    case invalidURL(_ urlString: String)
-    case invalidResponse
-    case invalidData
-}
-
-struct ImageDownloader {
+struct ImageService: ImageServiceDelegate {
     func downloadImageAsync(from urlString: String) async -> UIImage? {
         guard let url = URL(string: urlString) else { return nil }
         

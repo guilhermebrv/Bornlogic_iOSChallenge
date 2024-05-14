@@ -7,7 +7,8 @@
 
 import UIKit
 
-class DetailsViewModel {
+class DetailsViewModel: TableViewMethodsDelegate {
+    
     var articleData: Article?
     
     init(article: Article) {
@@ -26,7 +27,7 @@ class DetailsViewModel {
         return cell ?? UITableViewCell()
     }
     
-    public func heightForRowAt() -> CGFloat {
+    public var heightForRowAt: CGFloat {
         600
     }
 }

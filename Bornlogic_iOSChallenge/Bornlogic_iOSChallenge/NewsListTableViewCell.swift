@@ -7,14 +7,9 @@
 
 import UIKit
 
-protocol CellDataDelegate: AnyObject {
-    func setupCellContent(with article: Article?)
-    func setupImages(from urlString: String)
-}
-
 class NewsListTableViewCell: UITableViewCell {
     static let identifier = String(describing: NewsListTableViewCell.self)
-    private var imageDownloader: ImageDownloader?
+    private var imageService: ImageService?
     private let cellView = NewsListCellView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -34,25 +29,21 @@ class NewsListTableViewCell: UITableViewCell {
 
 extension NewsListTableViewCell: CellDataDelegate {
     public func setupCellContent(with article: Article?) {
+        cellView.configure(with: article)
         setupImages(from: article?.urlToImage ?? "")
-        cellView.titleLabel.text = article?.title
-        cellView.authorLabel.text = article?.author
-        cellView.descriptionLabel.text = article?.description
     }
     
     public func setupImages(from urlString: String) {
-        imageDownloader = ImageDownloader()
+        imageService = ImageService()
         
         Task {
-            if let image = await imageDownloader?.downloadImageAsync(from: urlString) {
+            if let image = await imageService?.downloadImageAsync(from: urlString) {
                 DispatchQueue.main.async {
-                    self.cellView.imageView.image = image
+                    self.cellView.setImage(with: image)
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.cellView.imageView.contentMode = .scaleAspectFit
-                    self.cellView.imageView.image = UIImage(systemName: "photo.on.rectangle.angled")?
-                        .withTintColor(.secondarySystemBackground, renderingMode: .alwaysOriginal)
+                    self.cellView.setImage(with: UIImage(systemName: "photo.on.rectangle.angled")!)
                 }
             }
         }

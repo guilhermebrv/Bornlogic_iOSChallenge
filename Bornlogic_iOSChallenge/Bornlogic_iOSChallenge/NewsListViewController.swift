@@ -15,7 +15,6 @@ class NewsListViewController: UIViewController {
         super.loadView()
         listView = NewsListView()
         view = listView
-        view.backgroundColor = .secondarySystemBackground
     }
 
     override func viewDidLoad() {
@@ -85,7 +84,7 @@ extension NewsListViewController: NewsViewModelDelegate {
 //    }
 }
 
-extension NewsListViewController: NewsListViewDelegate {
+extension NewsListViewController: TableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfRowsInSection
     }
@@ -96,7 +95,7 @@ extension NewsListViewController: NewsListViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        viewModel.heightForRowAt()
+        viewModel.heightForRowAt
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

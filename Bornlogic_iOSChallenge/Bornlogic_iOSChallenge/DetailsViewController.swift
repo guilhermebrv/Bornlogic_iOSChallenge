@@ -43,7 +43,7 @@ extension DetailsViewController {
     }
 }
 
-extension DetailsViewController: DetailsViewDelegate {
+extension DetailsViewController: TableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel?.numberOfRowsInSection ?? 1
     }
@@ -54,6 +54,6 @@ extension DetailsViewController: DetailsViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        viewModel?.heightForRowAt() ?? 500
+        viewModel?.heightForRowAt ?? 600
     }
 }

@@ -7,21 +7,17 @@
 
 import UIKit
 
-protocol NewsViewModelDelegate: AnyObject {
-    func newsDataDidUpdate()
-    func newsDataDidFailWithError(_ error: NewsError)
-}
-
-class NewsListViewModel {
+class NewsListViewModel: TableViewMethodsDelegate {
     weak var delegate: NewsViewModelDelegate?
     var newsData: [Article]?
     
-    private let newsService: NewsServiceProtocol
+    private let newsService: NewsServiceDelegate
 
-    init(newsService: NewsServiceProtocol) {
+    init(newsService: NewsServiceDelegate) {
         self.newsService = newsService
     }
 
+    // MARK: News Data Methods
     func loadNews() {
         Task {
             do {
@@ -52,10 +48,11 @@ class NewsListViewModel {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsListTableViewCell.identifier,
                                                  for: indexPath) as? NewsListTableViewCell
         cell?.setupCellContent(with: newsData?[indexPath.row])
+        cell?.selectionStyle = .none
         return cell ?? UITableViewCell()
     }
     
-    public func heightForRowAt() -> CGFloat {
-        400
+    public var heightForRowAt: CGFloat {
+        405
     }
 }

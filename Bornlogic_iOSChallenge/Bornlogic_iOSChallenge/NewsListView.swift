@@ -7,9 +7,6 @@
 
 import UIKit
 
-protocol NewsListViewDelegate: UITableViewDelegate, UITableViewDataSource {
-}
-
 class NewsListView: UIView {
     public let tableView = UITableView()
     public let spinner = UIActivityIndicatorView(style: .large)

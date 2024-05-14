@@ -26,7 +26,25 @@ class NewsDetailsCellView: UIView {
     }
 }
 
-extension NewsDetailsCellView {
+extension NewsDetailsCellView: ConfigurableView {
+    func setImage(with image: UIImage) {
+        if image != UIImage(systemName: "photo.on.rectangle.angled") {
+            imageView.image = image
+        } else {
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = image
+                .withTintColor(.secondarySystemBackground, renderingMode: .alwaysOriginal)
+        }
+    }
+    
+    func configure(with data: Article?) {
+        dateLabel.text = data?.publishedAt.formatted()
+        contentLabel.text = data?.content
+    }
+}
+
+
+extension NewsDetailsCellView  {
     private func createElements() {
         addSubview(stackView)
         stackView.addArrangedSubview(imageView)

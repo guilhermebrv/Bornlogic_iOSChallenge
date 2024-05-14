@@ -7,9 +7,6 @@
 
 import UIKit
 
-protocol DetailsViewDelegate: UITableViewDelegate, UITableViewDataSource {
-}
-
 class DetailsView: UIView {
     public let tableView = UITableView()
 

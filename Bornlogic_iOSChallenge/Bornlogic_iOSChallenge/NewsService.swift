@@ -5,19 +5,9 @@
 //  Created by Guilherme Viana on 13/05/2024.
 //
 
-import Foundation 
+import Foundation
 
-protocol NewsServiceProtocol {
-    func fetchData() async throws -> NewsData?
-}
-
-enum NewsError: Error {
-    case invalidURL(_ urlString: String)
-    case invalidResponse
-    case invalidData
-}
-
-class NewsService: NewsServiceProtocol {
+struct NewsService: NewsServiceDelegate, DataParsingDelegate {
     let apiKey = APIKeyManager.shared.getApiKey()
     
     func fetchData() async throws -> NewsData? {
@@ -26,7 +16,7 @@ class NewsService: NewsServiceProtocol {
             return nil
         }
         
-        let endpoint = "https://newsapi.org/v2/everything?q=taylor-swift&from=2024-04-13&language=en&sortBy=publishedAt&apiKey=\(apiKey)"
+        let endpoint = "https://newsapi.org/v2/everything?q=taylor&from=2024-04-14&language=en&sortBy=publishedAt&apiKey=\(apiKey)"
         
         guard let url = URL(string: endpoint) else { throw NewsError.invalidURL(endpoint) }
         
@@ -37,7 +27,7 @@ class NewsService: NewsServiceProtocol {
         return try decodeData(data)
     }
     
-    private func decodeData(_ data: Data) throws -> NewsData? {
+    func decodeData(_ data: Data) throws -> NewsData? {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         
