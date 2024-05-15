@@ -7,14 +7,8 @@
 
 import Foundation
 
-enum ImageError: Error {
-    case invalidURL(_ urlString: String)
-    case invalidResponse
-    case invalidData
-}
-
 enum NewsError: Error {
-    case invalidURL(_ urlString: String)
+    case invalidURL
     case invalidResponse
     case invalidData
 }

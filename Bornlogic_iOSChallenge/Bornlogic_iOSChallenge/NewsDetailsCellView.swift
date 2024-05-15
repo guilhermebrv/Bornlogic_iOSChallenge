@@ -28,12 +28,13 @@ class NewsDetailsCellView: UIView {
 
 extension NewsDetailsCellView: ConfigurableView {
     func setImage(with image: UIImage) {
-        if image != UIImage(systemName: "photo.on.rectangle.angled") {
+        if image == UIImage(systemName: "photo.on.rectangle.angled") {
             imageView.image = image
-        } else {
+                .withTintColor(.systemBackground, renderingMode: .alwaysOriginal)
             imageView.contentMode = .scaleAspectFit
+
+        } else {
             imageView.image = image
-                .withTintColor(.secondarySystemBackground, renderingMode: .alwaysOriginal)
         }
     }
     

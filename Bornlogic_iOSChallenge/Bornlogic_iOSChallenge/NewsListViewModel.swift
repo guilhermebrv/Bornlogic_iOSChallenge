@@ -21,7 +21,7 @@ class NewsListViewModel: TableViewMethodsDelegate {
     func loadNews() {
         Task {
             do {
-                let data = try await newsService.fetchData()
+                let data = try await newsService.fetchData(for: .topHeadlines, country: .unitedStates, category: nil)
                 let filteredArticles = filterData(on: data, containing: "[Removed]")
                 DispatchQueue.main.async { [weak self] in
                     self?.newsData = filteredArticles

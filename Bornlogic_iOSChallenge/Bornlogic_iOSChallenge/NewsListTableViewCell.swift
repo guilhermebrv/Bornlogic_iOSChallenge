@@ -15,6 +15,7 @@ class NewsListTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configScreen()
+        cellView.spinner.startAnimating()
     }
     
     required init?(coder: NSCoder) {
@@ -40,10 +41,12 @@ extension NewsListTableViewCell: CellDataDelegate {
             if let image = await imageService?.downloadImageAsync(from: urlString) {
                 DispatchQueue.main.async {
                     self.cellView.setImage(with: image)
+                    self.cellView.spinner.stopAnimating()
                 }
             } else {
                 DispatchQueue.main.async {
                     self.cellView.setImage(with: UIImage(systemName: "photo.on.rectangle.angled")!)
+                    self.cellView.spinner.stopAnimating()
                 }
             }
         }

@@ -14,6 +14,7 @@ class NewsListCellView: UIView {
     let titleLabel = UILabel()
     let descriptionLabel = UILabel()
     let authorLabel = UILabel()
+    let spinner = UIActivityIndicatorView(style: .medium)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,6 +54,7 @@ extension NewsListCellView {
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(descriptionLabel)
+        imageView.addSubview(spinner)
         bgView.addSubview(authorLabel)
     }
     
@@ -80,6 +82,9 @@ extension NewsListCellView {
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
         
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.hidesWhenStopped = true
+                
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         descriptionLabel.textAlignment = .justified
@@ -109,6 +114,9 @@ extension NewsListCellView {
             authorLabel.trailingAnchor.constraint(equalTo: bgView.trailingAnchor, constant: -16),
             
             imageView.heightAnchor.constraint(equalToConstant: 180),
+            
+            spinner.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
+            spinner.centerXAnchor.constraint(equalTo: imageView.centerXAnchor)
         ])
     }
 }

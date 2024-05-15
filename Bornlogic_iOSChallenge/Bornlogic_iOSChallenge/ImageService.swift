@@ -15,12 +15,10 @@ struct ImageService: ImageServiceDelegate {
             let (data, response) = try await URLSession.shared.data(from: url)
             guard let httpResponse = response as? HTTPURLResponse,
                   httpResponse.statusCode == 200 else {
-                // TODO: add error handling
                 return nil
             }
             return UIImage(data: data)
         } catch {
-            // TODO: add error handling
             return nil
         }
     }

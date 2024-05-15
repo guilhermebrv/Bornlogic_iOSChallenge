@@ -9,7 +9,11 @@ import UIKit
 
 
 protocol NewsServiceDelegate {
-    func fetchData() async throws -> NewsData?
+    func fetchData(for newsType: EndpointNewsType, country: EndpointCountries?, category: EndpointCategory?) async throws -> NewsData?
+}
+
+protocol EndpointDelegate {
+    func getEndpointURL(for newsType: EndpointNewsType, country: EndpointCountries?, category: EndpointCategory?, with apiKey: String) -> URL?
 }
 
 protocol DataParsingDelegate {

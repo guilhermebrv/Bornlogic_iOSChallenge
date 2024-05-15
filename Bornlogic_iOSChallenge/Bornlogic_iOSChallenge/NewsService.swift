@@ -7,35 +7,18 @@
 
 import Foundation
 
-struct NewsService: NewsServiceDelegate, DataParsingDelegate {
-    let apiKey = APIKeyManager.shared.getApiKey()
-    
-    func fetchData() async throws -> NewsData? {
-        guard let apiKey else {
-            print("Need an API key to perform request")
-            return nil
-        }
-        
-        let endpoint = "https://newsapi.org/v2/everything?q=taylor&from=2024-04-14&language=en&sortBy=publishedAt&apiKey=\(apiKey)"
-        
-        guard let url = URL(string: endpoint) else { throw NewsError.invalidURL(endpoint) }
+struct NewsService: NewsServiceDelegate {    
+    func fetchData(for newsType: EndpointNewsType, country: EndpointCountries?, category: EndpointCategory?) async throws -> NewsData? {
+        let apiKey = APIKeyManager.shared.getApiKey()
+        let endpointURL = APIEndpointHandler().getEndpointURL(for: newsType, country: country, category: category, with: apiKey)
+
+        guard let url = endpointURL else { throw NewsError.invalidURL }
         
         let (data, response) = try await URLSession.shared.data(from: url)
+        
         guard let response = response as? HTTPURLResponse,
             response.statusCode == 200 else { throw NewsError.invalidResponse }
-
-        return try decodeData(data)
-    }
-    
-    func decodeData(_ data: Data) throws -> NewsData? {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
         
-        do {
-            return try decoder.decode(NewsData.self, from: data)
-        } catch {
-            throw NewsError.invalidData
-        }
+        return try DataParser().decodeData(data)
     }
-
 }

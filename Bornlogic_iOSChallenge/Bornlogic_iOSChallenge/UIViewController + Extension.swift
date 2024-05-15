@@ -12,10 +12,12 @@ extension UIViewController {
         setNavBarTitle(with: title)
         setNavBarAppearance()
     }
+    
     private func setNavBarTitle(with title: String) {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = title
     }
+    
     private func setNavBarAppearance() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()

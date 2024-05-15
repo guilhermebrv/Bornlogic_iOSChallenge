@@ -21,7 +21,6 @@ class NewsListViewController: UIViewController {
         super.viewDidLoad()
         listView?.spinner.startAnimating()
         signProtocols()
-//        setupRefreshControl()
         viewModel.loadNews()
     }
     
@@ -29,7 +28,6 @@ class NewsListViewController: UIViewController {
         super.viewWillAppear(true)
         configureNavBar(title: Constants.MAIN_TITLE)
     }
-
 }
 
 extension NewsListViewController {
@@ -38,17 +36,6 @@ extension NewsListViewController {
         listView?.tableView.dataSource = self
         viewModel.delegate = self
     }
-    
-//    private func setupRefreshControl() {
-//        let refreshControl = UIRefreshControl()
-//        refreshControl.addTarget(self, action: #selector(refreshNewsData(_:)), for: .valueChanged)
-//        listView?.tableView.refreshControl = refreshControl
-//    }
-//
-//    @objc private func refreshNewsData(_ sender: UIRefreshControl) {
-//        viewModel.loadNews()
-//        sender.endRefreshing()
-//    }
 }
 
 extension NewsListViewController: NewsViewModelDelegate {
@@ -58,30 +45,21 @@ extension NewsListViewController: NewsViewModelDelegate {
     }
     
     func newsDataDidFailWithError(_ error: NewsError) {
-//        let message = errorMessage(for: error)
-//        presentErrorAlert(message: message)
+        let errorHandler = ErrorHandler()
+        let message = errorHandler.errorMessage(for: error)
+        presentErrorAlert(message: message) {
+            self.viewModel.loadNews()
+        }
     }
     
-//    private func errorMessage(for error: Error) -> String {
-//        if let newsError = error as? NewsError {
-//            switch newsError {
-//            case .invalidURL(let urlString):
-//                return "The URL \(urlString) is invalid."
-//            case .invalidResponse:
-//                return "The response from the server was invalid."
-//            case .invalidData:
-//                return "The data received was corrupt or unreadable."
-//            }
-//        } else {
-//            return error.localizedDescription
-//        }
-//    }
-//    
-//    private func presentErrorAlert(message: String) {
-//        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: .default))
-//        self.present(alert, animated: true, completion: nil)
-//    }
+    private func presentErrorAlert(message: String, retryHandler: @escaping () -> Void) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
+            retryHandler()
+        }
+        alert.addAction(retryAction)
+        self.present(alert, animated: true)
+    }
 }
 
 extension NewsListViewController: TableViewDelegate {
@@ -104,6 +82,4 @@ extension NewsListViewController: TableViewDelegate {
         let detailsScreen = DetailsViewController(article: data)
         navigationController?.pushViewController(detailsScreen, animated: true)
     }
-    
 }
-
