@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum NewsError: Error {
+    case invalidURL
+    case invalidResponse
+    case invalidData
+}
+
 struct ErrorHandler {
     public func errorMessage(for error: Error) -> String {
         if let newsError = error as? NewsError {

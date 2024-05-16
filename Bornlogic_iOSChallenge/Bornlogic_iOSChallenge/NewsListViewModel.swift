@@ -10,7 +10,6 @@ import UIKit
 class NewsListViewModel: TableViewMethodsDelegate {
     weak var delegate: NewsViewModelDelegate?
     var newsData: [Article]?
-    
     private let newsService: NewsServiceDelegate
 
     init(newsService: NewsServiceDelegate) {

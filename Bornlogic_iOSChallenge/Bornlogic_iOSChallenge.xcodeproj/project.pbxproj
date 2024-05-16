@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B39E3BE2BF6160500810594 /* NewsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5121682BF5383B00080318 /* NewsServiceMock.swift */; };
+		2B39E3C12BF6496300810594 /* NewsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B39E3C02BF6496300810594 /* NewsData.json */; };
+		2B39E3C32BF64D9E00810594 /* NewsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B39E3C22BF64D9E00810594 /* NewsServiceTests.swift */; };
+		2B5121672BF534B300080318 /* NetworkErrorAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5121662BF534B300080318 /* NetworkErrorAlertTests.swift */; };
+		2B51216A2BF5385A00080318 /* NetworkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBB5A2BF36A1D00433FFF /* NetworkingProtocols.swift */; };
+		2B51216C2BF5389800080318 /* APIEndpointParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B568E092BF4C913002D39F2 /* APIEndpointParams.swift */; };
+		2B51216D2BF538A100080318 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4D9992BF20CB900758732 /* NewsData.swift */; };
 		2B568E0A2BF4C913002D39F2 /* APIEndpointParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B568E092BF4C913002D39F2 /* APIEndpointParams.swift */; };
 		2B568E0C2BF4F3D8002D39F2 /* APIEndpointHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B568E0B2BF4F3D8002D39F2 /* APIEndpointHandler.swift */; };
 		2B84AA7C2BF3883300CA479B /* TableViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B84AA7B2BF3883300CA479B /* TableViewProtocols.swift */; };
@@ -16,12 +23,10 @@
 		2B84AA8B2BF3E67900CA479B /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B84AA8A2BF3E67900CA479B /* ErrorHandler.swift */; };
 		2B8BBB592BF3696500433FFF /* CellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBB582BF3696500433FFF /* CellProtocols.swift */; };
 		2B8BBB5B2BF36A1E00433FFF /* NetworkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBB5A2BF36A1D00433FFF /* NetworkingProtocols.swift */; };
-		2B8BBB5D2BF36A6200433FFF /* ErrorsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBB5C2BF36A6200433FFF /* ErrorsEnum.swift */; };
 		2BA64F192BF0DFF20074C3B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F182BF0DFF20074C3B4 /* AppDelegate.swift */; };
 		2BA64F1D2BF0DFF20074C3B4 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F1C2BF0DFF20074C3B4 /* NewsListViewController.swift */; };
 		2BA64F222BF0DFF40074C3B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA64F212BF0DFF40074C3B4 /* Assets.xcassets */; };
 		2BA64F252BF0DFF40074C3B4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2BA64F242BF0DFF40074C3B4 /* Base */; };
-		2BA64F302BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F2F2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests.swift */; };
 		2BA64F3A2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F392BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.swift */; };
 		2BA64F3C2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F3B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift */; };
 		2BA64F562BF0E7C90074C3B4 /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F552BF0E7C90074C3B4 /* NewsListView.swift */; };
@@ -59,6 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B39E3C02BF6496300810594 /* NewsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsData.json; sourceTree = "<group>"; };
+		2B39E3C22BF64D9E00810594 /* NewsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceTests.swift; sourceTree = "<group>"; };
+		2B5121662BF534B300080318 /* NetworkErrorAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorAlertTests.swift; sourceTree = "<group>"; };
+		2B5121682BF5383B00080318 /* NewsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceMock.swift; sourceTree = "<group>"; };
 		2B568E092BF4C913002D39F2 /* APIEndpointParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointParams.swift; sourceTree = "<group>"; };
 		2B568E0B2BF4F3D8002D39F2 /* APIEndpointHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointHandler.swift; sourceTree = "<group>"; };
 		2B84AA7B2BF3883300CA479B /* TableViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProtocols.swift; sourceTree = "<group>"; };
@@ -68,7 +77,6 @@
 		2B84AA8A2BF3E67900CA479B /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		2B8BBB582BF3696500433FFF /* CellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellProtocols.swift; sourceTree = "<group>"; };
 		2B8BBB5A2BF36A1D00433FFF /* NetworkingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocols.swift; sourceTree = "<group>"; };
-		2B8BBB5C2BF36A6200433FFF /* ErrorsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsEnum.swift; sourceTree = "<group>"; };
 		2BA64F152BF0DFF10074C3B4 /* Bornlogic_iOSChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bornlogic_iOSChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA64F182BF0DFF20074C3B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA64F1C2BF0DFF20074C3B4 /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +84,6 @@
 		2BA64F242BF0DFF40074C3B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BA64F262BF0DFF40074C3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BA64F2B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bornlogic_iOSChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BA64F2F2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bornlogic_iOSChallengeTests.swift; sourceTree = "<group>"; };
 		2BA64F352BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bornlogic_iOSChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA64F392BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bornlogic_iOSChallengeUITests.swift; sourceTree = "<group>"; };
 		2BA64F3B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bornlogic_iOSChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -122,9 +129,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B5121652BF5338E00080318 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				2B5121662BF534B300080318 /* NetworkErrorAlertTests.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		2B568E082BF4C100002D39F2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				2B39E3C22BF64D9E00810594 /* NewsServiceTests.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -234,8 +250,8 @@
 		2BA64F2E2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				2B5121652BF5338E00080318 /* Alerts */,
 				2B568E082BF4C100002D39F2 /* Networking */,
-				2BA64F2F2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests.swift */,
 			);
 			path = Bornlogic_iOSChallengeTests;
 			sourceTree = "<group>";
@@ -297,7 +313,7 @@
 				2B84AA7F2BF38B1B00CA479B /* API */,
 				2B84AA822BF38B9A00CA479B /* Parser */,
 				2BF4D9982BF209AE00758732 /* Model */,
-				2BF4D9A22BF215CB00758732 /* Services */,
+				2BF4D9A22BF215CB00758732 /* Service */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -315,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				2BA64F592BF1083A0074C3B4 /* Constants.swift */,
-				2B8BBB5C2BF36A6200433FFF /* ErrorsEnum.swift */,
 				2B84AA8A2BF3E67900CA479B /* ErrorHandler.swift */,
 			);
 			name = Utils;
@@ -338,13 +353,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		2BF4D9A22BF215CB00758732 /* Services */ = {
+		2BF4D9A22BF215CB00758732 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				2BF4D99B2BF20D9F00758732 /* NewsService.swift */,
+				2B5121682BF5383B00080318 /* NewsServiceMock.swift */,
 				2BF4D9B82BF24CC000758732 /* ImageService.swift */,
+				2B39E3C02BF6496300810594 /* NewsData.json */,
 			);
-			name = Services;
+			name = Service;
 			sourceTree = "<group>";
 		};
 		2BF4D9BA2BF2607500758732 /* Cell */ = {
@@ -488,6 +505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B39E3C12BF6496300810594 /* NewsData.json in Resources */,
 				2BA64F222BF0DFF40074C3B4 /* Assets.xcassets in Resources */,
 				2BA64F252BF0DFF40074C3B4 /* Base in Resources */,
 			);
@@ -527,9 +545,9 @@
 				2BA64F582BF107DE0074C3B4 /* UIViewController + Extension.swift in Sources */,
 				2B84AA842BF399C300CA479B /* DataParser.swift in Sources */,
 				2B84AA8B2BF3E67900CA479B /* ErrorHandler.swift in Sources */,
+				2B39E3BE2BF6160500810594 /* NewsServiceMock.swift in Sources */,
 				2BA64F622BF10F670074C3B4 /* NewsListCellView.swift in Sources */,
 				2B568E0C2BF4F3D8002D39F2 /* APIEndpointHandler.swift in Sources */,
-				2B8BBB5D2BF36A6200433FFF /* ErrorsEnum.swift in Sources */,
 				2BF4D99C2BF20D9F00758732 /* NewsService.swift in Sources */,
 				2B84AA7E2BF3892A00CA479B /* NewsDataProtocols.swift in Sources */,
 				2BF4D99A2BF20CB900758732 /* NewsData.swift in Sources */,
@@ -548,7 +566,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BA64F302BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests.swift in Sources */,
+				2B39E3C32BF64D9E00810594 /* NewsServiceTests.swift in Sources */,
+				2B5121672BF534B300080318 /* NetworkErrorAlertTests.swift in Sources */,
+				2B51216C2BF5389800080318 /* APIEndpointParams.swift in Sources */,
+				2B51216A2BF5385A00080318 /* NetworkingProtocols.swift in Sources */,
+				2B51216D2BF538A100080318 /* NewsData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

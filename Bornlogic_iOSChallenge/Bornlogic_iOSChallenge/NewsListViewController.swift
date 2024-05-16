@@ -9,7 +9,8 @@ import UIKit
 
 class NewsListViewController: UIViewController {
     private var listView: NewsListView?
-    private var viewModel = NewsListViewModel(newsService: NewsService())
+    public var viewModel = NewsListViewModel(newsService: NewsService())
+    public var alert: UIAlertController?
     
     override func loadView() {
         super.loadView()
@@ -53,7 +54,8 @@ extension NewsListViewController: NewsViewModelDelegate {
     }
     
     private func presentErrorAlert(message: String, retryHandler: @escaping () -> Void) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        guard let alert else { return }
         let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
             retryHandler()
         }
