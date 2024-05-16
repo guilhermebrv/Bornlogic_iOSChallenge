@@ -22,7 +22,7 @@ class NewsListViewController: UIViewController {
         super.viewDidLoad()
         listView?.spinner.startAnimating()
         signProtocols()
-        viewModel.loadNews()
+         viewModel.loadNews()
     }
     
     override func viewWillAppear(_ animated: Bool) {

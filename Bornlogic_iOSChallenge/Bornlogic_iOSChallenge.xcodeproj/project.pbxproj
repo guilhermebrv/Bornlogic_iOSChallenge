@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B39E3BE2BF6160500810594 /* NewsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5121682BF5383B00080318 /* NewsServiceMock.swift */; };
-		2B39E3C12BF6496300810594 /* NewsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B39E3C02BF6496300810594 /* NewsData.json */; };
+		2B39E3C12BF6496300810594 /* ValidNewsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B39E3C02BF6496300810594 /* ValidNewsData.json */; };
 		2B39E3C32BF64D9E00810594 /* NewsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B39E3C22BF64D9E00810594 /* NewsServiceTests.swift */; };
 		2B5121672BF534B300080318 /* NetworkErrorAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5121662BF534B300080318 /* NetworkErrorAlertTests.swift */; };
 		2B51216A2BF5385A00080318 /* NetworkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBB5A2BF36A1D00433FFF /* NetworkingProtocols.swift */; };
@@ -36,6 +36,8 @@
 		2BA64F5E2BF10E550074C3B4 /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F5D2BF10E550074C3B4 /* NewsListTableViewCell.swift */; };
 		2BA64F602BF10ED30074C3B4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F5F2BF10ED30074C3B4 /* UIView + Extension.swift */; };
 		2BA64F622BF10F670074C3B4 /* NewsListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F612BF10F670074C3B4 /* NewsListCellView.swift */; };
+		2BE151612BF680D900A84D44 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE151602BF680D900A84D44 /* URLProtocolStub.swift */; };
+		2BE151622BF687AB00A84D44 /* ValidNewsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B39E3C02BF6496300810594 /* ValidNewsData.json */; };
 		2BF4D99A2BF20CB900758732 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4D9992BF20CB900758732 /* NewsData.swift */; };
 		2BF4D99C2BF20D9F00758732 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4D99B2BF20D9F00758732 /* NewsService.swift */; };
 		2BF4D9A72BF235F100758732 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF4D9A62BF235F100758732 /* DetailsViewController.swift */; };
@@ -64,7 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B39E3C02BF6496300810594 /* NewsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsData.json; sourceTree = "<group>"; };
+		2B39E3C02BF6496300810594 /* ValidNewsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ValidNewsData.json; sourceTree = "<group>"; };
 		2B39E3C22BF64D9E00810594 /* NewsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceTests.swift; sourceTree = "<group>"; };
 		2B5121662BF534B300080318 /* NetworkErrorAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorAlertTests.swift; sourceTree = "<group>"; };
 		2B5121682BF5383B00080318 /* NewsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceMock.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		2BA64F5D2BF10E550074C3B4 /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
 		2BA64F5F2BF10ED30074C3B4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		2BA64F612BF10F670074C3B4 /* NewsListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListCellView.swift; sourceTree = "<group>"; };
+		2BE151602BF680D900A84D44 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		2BF4D9992BF20CB900758732 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		2BF4D99B2BF20D9F00758732 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		2BF4D9A62BF235F100758732 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +240,7 @@
 		2BA64F172BF0DFF10074C3B4 /* Bornlogic_iOSChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				2B39E3C02BF6496300810594 /* ValidNewsData.json */,
 				2B8BBB572BF3694D00433FFF /* Protocols */,
 				2BA64F512BF0E32D0074C3B4 /* Extensions */,
 				2BA64F522BF0E3320074C3B4 /* Utils */,
@@ -359,7 +363,7 @@
 				2BF4D99B2BF20D9F00758732 /* NewsService.swift */,
 				2B5121682BF5383B00080318 /* NewsServiceMock.swift */,
 				2BF4D9B82BF24CC000758732 /* ImageService.swift */,
-				2B39E3C02BF6496300810594 /* NewsData.json */,
+				2BE151602BF680D900A84D44 /* URLProtocolStub.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -505,7 +509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B39E3C12BF6496300810594 /* NewsData.json in Resources */,
+				2B39E3C12BF6496300810594 /* ValidNewsData.json in Resources */,
 				2BA64F222BF0DFF40074C3B4 /* Assets.xcassets in Resources */,
 				2BA64F252BF0DFF40074C3B4 /* Base in Resources */,
 			);
@@ -515,6 +519,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE151622BF687AB00A84D44 /* ValidNewsData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +556,7 @@
 				2BF4D99C2BF20D9F00758732 /* NewsService.swift in Sources */,
 				2B84AA7E2BF3892A00CA479B /* NewsDataProtocols.swift in Sources */,
 				2BF4D99A2BF20CB900758732 /* NewsData.swift in Sources */,
+				2BE151612BF680D900A84D44 /* URLProtocolStub.swift in Sources */,
 				2BF4D9B92BF24CC000758732 /* ImageService.swift in Sources */,
 				2BA64F602BF10ED30074C3B4 /* UIView + Extension.swift in Sources */,
 				2BA64F192BF0DFF20074C3B4 /* AppDelegate.swift in Sources */,

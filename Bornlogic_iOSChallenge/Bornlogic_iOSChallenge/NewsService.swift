@@ -8,14 +8,20 @@
 import Foundation
 
 struct NewsService: NewsServiceDelegate {    
+    private let session: URLSession
+
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+    
     func fetchData(for newsType: EndpointNewsType, country: EndpointCountries?, category: EndpointCategory?) async throws -> NewsData? {
         let apiKey = APIKeyManager.shared.getApiKey()
         let endpointURL = APIEndpointHandler().getEndpointURL(for: newsType, country: country, category: category, with: apiKey)
 
         guard let url = endpointURL else { throw NewsError.invalidURL }
         
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
+        let (data, response) = try await session.data(from: url)
+                
         guard let response = response as? HTTPURLResponse,
             response.statusCode == 200 else { throw NewsError.invalidResponse }
         
