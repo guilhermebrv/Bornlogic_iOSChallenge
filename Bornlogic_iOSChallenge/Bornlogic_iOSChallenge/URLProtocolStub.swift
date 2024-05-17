@@ -27,7 +27,7 @@ class URLProtocolStub: URLProtocol {
     }
 
     override func startLoading() {
-        if let error = URLProtocolStub.error {
+        if let error = URLProtocolStub.error as? URLError, error.code == URLError.badURL {
             client?.urlProtocol(self, didFailWithError: error)
         } else {
             client?.urlProtocol(self, didLoad: URLProtocolStub.responseData ?? Data())

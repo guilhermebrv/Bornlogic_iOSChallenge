@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B39E3BE2BF6160500810594 /* NewsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5121682BF5383B00080318 /* NewsServiceMock.swift */; };
+		2B39E3BE2BF6160500810594 /* NewsServiceFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5121682BF5383B00080318 /* NewsServiceFake.swift */; };
 		2B39E3C12BF6496300810594 /* ValidNewsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B39E3C02BF6496300810594 /* ValidNewsData.json */; };
 		2B39E3C32BF64D9E00810594 /* NewsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B39E3C22BF64D9E00810594 /* NewsServiceTests.swift */; };
 		2B5121672BF534B300080318 /* NetworkErrorAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5121662BF534B300080318 /* NetworkErrorAlertTests.swift */; };
@@ -27,8 +27,6 @@
 		2BA64F1D2BF0DFF20074C3B4 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F1C2BF0DFF20074C3B4 /* NewsListViewController.swift */; };
 		2BA64F222BF0DFF40074C3B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA64F212BF0DFF40074C3B4 /* Assets.xcassets */; };
 		2BA64F252BF0DFF40074C3B4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2BA64F242BF0DFF40074C3B4 /* Base */; };
-		2BA64F3A2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F392BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.swift */; };
-		2BA64F3C2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F3B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift */; };
 		2BA64F562BF0E7C90074C3B4 /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F552BF0E7C90074C3B4 /* NewsListView.swift */; };
 		2BA64F582BF107DE0074C3B4 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F572BF107DE0074C3B4 /* UIViewController + Extension.swift */; };
 		2BA64F5A2BF1083A0074C3B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA64F592BF1083A0074C3B4 /* Constants.swift */; };
@@ -56,20 +54,13 @@
 			remoteGlobalIDString = 2BA64F142BF0DFF10074C3B4;
 			remoteInfo = Bornlogic_iOSChallenge;
 		};
-		2BA64F362BF0DFF50074C3B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2BA64F0D2BF0DFF10074C3B4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2BA64F142BF0DFF10074C3B4;
-			remoteInfo = Bornlogic_iOSChallenge;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2B39E3C02BF6496300810594 /* ValidNewsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ValidNewsData.json; sourceTree = "<group>"; };
 		2B39E3C22BF64D9E00810594 /* NewsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceTests.swift; sourceTree = "<group>"; };
 		2B5121662BF534B300080318 /* NetworkErrorAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorAlertTests.swift; sourceTree = "<group>"; };
-		2B5121682BF5383B00080318 /* NewsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceMock.swift; sourceTree = "<group>"; };
+		2B5121682BF5383B00080318 /* NewsServiceFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceFake.swift; sourceTree = "<group>"; };
 		2B568E092BF4C913002D39F2 /* APIEndpointParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointParams.swift; sourceTree = "<group>"; };
 		2B568E0B2BF4F3D8002D39F2 /* APIEndpointHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointHandler.swift; sourceTree = "<group>"; };
 		2B84AA7B2BF3883300CA479B /* TableViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProtocols.swift; sourceTree = "<group>"; };
@@ -86,9 +77,6 @@
 		2BA64F242BF0DFF40074C3B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BA64F262BF0DFF40074C3B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BA64F2B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bornlogic_iOSChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BA64F352BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bornlogic_iOSChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BA64F392BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bornlogic_iOSChallengeUITests.swift; sourceTree = "<group>"; };
-		2BA64F3B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bornlogic_iOSChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2BA64F552BF0E7C90074C3B4 /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
 		2BA64F572BF107DE0074C3B4 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		2BA64F592BF1083A0074C3B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -96,6 +84,7 @@
 		2BA64F5D2BF10E550074C3B4 /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
 		2BA64F5F2BF10ED30074C3B4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		2BA64F612BF10F670074C3B4 /* NewsListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListCellView.swift; sourceTree = "<group>"; };
+		2BAA37DC2BF760B200CD830E /* Bornlogic_iOSChallenge.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Bornlogic_iOSChallenge.xctestplan; sourceTree = "<group>"; };
 		2BE151602BF680D900A84D44 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		2BF4D9992BF20CB900758732 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		2BF4D99B2BF20D9F00758732 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
@@ -116,13 +105,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2BA64F282BF0DFF50074C3B4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BA64F322BF0DFF50074C3B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -222,7 +204,6 @@
 			children = (
 				2BA64F172BF0DFF10074C3B4 /* Bornlogic_iOSChallenge */,
 				2BA64F2E2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests */,
-				2BA64F382BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests */,
 				2BA64F162BF0DFF10074C3B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -232,7 +213,6 @@
 			children = (
 				2BA64F152BF0DFF10074C3B4 /* Bornlogic_iOSChallenge.app */,
 				2BA64F2B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests.xctest */,
-				2BA64F352BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,19 +234,11 @@
 		2BA64F2E2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				2BAA37DC2BF760B200CD830E /* Bornlogic_iOSChallenge.xctestplan */,
 				2B5121652BF5338E00080318 /* Alerts */,
 				2B568E082BF4C100002D39F2 /* Networking */,
 			);
 			path = Bornlogic_iOSChallengeTests;
-			sourceTree = "<group>";
-		};
-		2BA64F382BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2BA64F392BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.swift */,
-				2BA64F3B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift */,
-			);
-			path = Bornlogic_iOSChallengeUITests;
 			sourceTree = "<group>";
 		};
 		2BA64F492BF0E2480074C3B4 /* Supporting */ = {
@@ -361,7 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				2BF4D99B2BF20D9F00758732 /* NewsService.swift */,
-				2B5121682BF5383B00080318 /* NewsServiceMock.swift */,
+				2B5121682BF5383B00080318 /* NewsServiceFake.swift */,
 				2BF4D9B82BF24CC000758732 /* ImageService.swift */,
 				2BE151602BF680D900A84D44 /* URLProtocolStub.swift */,
 			);
@@ -441,24 +413,6 @@
 			productReference = 2BA64F2B2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2BA64F342BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2BA64F452BF0DFF50074C3B4 /* Build configuration list for PBXNativeTarget "Bornlogic_iOSChallengeUITests" */;
-			buildPhases = (
-				2BA64F312BF0DFF50074C3B4 /* Sources */,
-				2BA64F322BF0DFF50074C3B4 /* Frameworks */,
-				2BA64F332BF0DFF50074C3B4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BA64F372BF0DFF50074C3B4 /* PBXTargetDependency */,
-			);
-			name = Bornlogic_iOSChallengeUITests;
-			productName = Bornlogic_iOSChallengeUITests;
-			productReference = 2BA64F352BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -473,10 +427,6 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					2BA64F2A2BF0DFF50074C3B4 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 2BA64F142BF0DFF10074C3B4;
-					};
-					2BA64F342BF0DFF50074C3B4 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 2BA64F142BF0DFF10074C3B4;
 					};
@@ -499,7 +449,6 @@
 			targets = (
 				2BA64F142BF0DFF10074C3B4 /* Bornlogic_iOSChallenge */,
 				2BA64F2A2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeTests */,
-				2BA64F342BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -523,13 +472,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BA64F332BF0DFF50074C3B4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -550,7 +492,7 @@
 				2BA64F582BF107DE0074C3B4 /* UIViewController + Extension.swift in Sources */,
 				2B84AA842BF399C300CA479B /* DataParser.swift in Sources */,
 				2B84AA8B2BF3E67900CA479B /* ErrorHandler.swift in Sources */,
-				2B39E3BE2BF6160500810594 /* NewsServiceMock.swift in Sources */,
+				2B39E3BE2BF6160500810594 /* NewsServiceFake.swift in Sources */,
 				2BA64F622BF10F670074C3B4 /* NewsListCellView.swift in Sources */,
 				2B568E0C2BF4F3D8002D39F2 /* APIEndpointHandler.swift in Sources */,
 				2BF4D99C2BF20D9F00758732 /* NewsService.swift in Sources */,
@@ -580,15 +522,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BA64F312BF0DFF50074C3B4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2BA64F3C2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITestsLaunchTests.swift in Sources */,
-				2BA64F3A2BF0DFF50074C3B4 /* Bornlogic_iOSChallengeUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -596,11 +529,6 @@
 			isa = PBXTargetDependency;
 			target = 2BA64F142BF0DFF10074C3B4 /* Bornlogic_iOSChallenge */;
 			targetProxy = 2BA64F2C2BF0DFF50074C3B4 /* PBXContainerItemProxy */;
-		};
-		2BA64F372BF0DFF50074C3B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2BA64F142BF0DFF10074C3B4 /* Bornlogic_iOSChallenge */;
-			targetProxy = 2BA64F362BF0DFF50074C3B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -839,42 +767,6 @@
 			};
 			name = Release;
 		};
-		2BA64F462BF0DFF50074C3B4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FH99D278L8;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "guilhermebrv.Bornlogic-iOSChallengeUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Bornlogic_iOSChallenge;
-			};
-			name = Debug;
-		};
-		2BA64F472BF0DFF50074C3B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FH99D278L8;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "guilhermebrv.Bornlogic-iOSChallengeUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Bornlogic_iOSChallenge;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -901,15 +793,6 @@
 			buildConfigurations = (
 				2BA64F432BF0DFF50074C3B4 /* Debug */,
 				2BA64F442BF0DFF50074C3B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2BA64F452BF0DFF50074C3B4 /* Build configuration list for PBXNativeTarget "Bornlogic_iOSChallengeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BA64F462BF0DFF50074C3B4 /* Debug */,
-				2BA64F472BF0DFF50074C3B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

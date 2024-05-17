@@ -14,13 +14,13 @@ struct NewsService: NewsServiceDelegate {
         self.session = session
     }
     
-    func fetchData(for newsType: EndpointNewsType, country: EndpointCountries?, category: EndpointCategory?) async throws -> NewsData? {
+    func fetchData(for newsType: EndpointNewsType?, country: EndpointCountries?, category: EndpointCategory?) async throws -> NewsData? {
         let apiKey = APIKeyManager.shared.getApiKey()
         let endpointURL = APIEndpointHandler().getEndpointURL(for: newsType, country: country, category: category, with: apiKey)
 
-        guard let url = endpointURL else { throw NewsError.invalidURL }
+        guard let endpointURL else { throw NewsError.invalidURL }
         
-        let (data, response) = try await session.data(from: url)
+        let (data, response) = try await session.data(from: endpointURL)
                 
         guard let response = response as? HTTPURLResponse,
             response.statusCode == 200 else { throw NewsError.invalidResponse }

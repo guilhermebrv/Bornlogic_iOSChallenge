@@ -11,13 +11,13 @@ import XCTest
 
 class NetworkErrorAlertTests: XCTestCase {
     var viewController: NewsListViewController!
-    var serviceMock: NewsServiceMock!
+    var serviceMock: NewsServiceFake!
     var viewModel: NewsListViewModel!
 
     override func setUp() {
         super.setUp()
         viewController = NewsListViewController()
-        serviceMock = NewsServiceMock()
+        serviceMock = NewsServiceFake()
         viewModel = NewsListViewModel(newsService: serviceMock)
         viewController.viewModel = viewModel
     }
