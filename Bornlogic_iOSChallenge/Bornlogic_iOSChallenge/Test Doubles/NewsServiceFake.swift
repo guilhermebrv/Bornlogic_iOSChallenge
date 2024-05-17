@@ -9,11 +9,12 @@ import UIKit
 
 class NewsServiceFake: NewsServiceDelegate {
     var errorToThrow: NewsError?
+    var fakeData: NewsData?
     
     func fetchData(for newsType: EndpointNewsType?, country: EndpointCountries?, category: EndpointCategory?) async throws -> NewsData? {
         if let error = errorToThrow {
             throw error
         }
-        return nil
+        return fakeData
     }
 }

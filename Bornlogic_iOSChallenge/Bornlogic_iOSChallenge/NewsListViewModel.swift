@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol NewsViewModelDelegate: AnyObject {
+    func newsDataDidUpdate()
+    func newsDataDidFailWithError(_ error: NewsError)
+}
+
 class NewsListViewModel: TableViewMethodsDelegate {
     weak var delegate: NewsViewModelDelegate?
     var newsData: [Article]?
@@ -21,7 +26,7 @@ class NewsListViewModel: TableViewMethodsDelegate {
         Task {
             do {
                 let data = try await newsService.fetchData(for: .topHeadlines, country: .unitedStates, category: nil)
-                let filteredArticles = filterData(on: data, containing: "[Removed]")
+                let filteredArticles = filterData(on: data, containingOnTitle: "[Removed]")
                 DispatchQueue.main.async { [weak self] in
                     self?.newsData = filteredArticles
                     self?.delegate?.newsDataDidUpdate()
@@ -34,7 +39,7 @@ class NewsListViewModel: TableViewMethodsDelegate {
         }
     }
     
-    private func filterData(on data: NewsData?, containing expression: String) -> [Article]? {
+    internal func filterData(on data: NewsData?, containingOnTitle expression: String) -> [Article]? {
         return data?.articles.filter { $0.title != expression }
     }
     

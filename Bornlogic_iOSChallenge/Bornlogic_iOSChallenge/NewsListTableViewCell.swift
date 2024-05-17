@@ -10,7 +10,15 @@ import UIKit
 class NewsListTableViewCell: UITableViewCell {
     static let identifier = String(describing: NewsListTableViewCell.self)
     private var imageService: ImageService?
-    private let cellView = NewsListCellView()
+    private(set) var cellView = NewsListCellView()
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cellView.authorLabel.text = nil
+        cellView.titleLabel.text = nil
+        cellView.descriptionLabel.text = nil
+        cellView.imageView.image = nil
+    }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

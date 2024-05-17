@@ -11,26 +11,26 @@ import XCTest
 
 class NetworkErrorAlertTests: XCTestCase {
     var viewController: NewsListViewController!
-    var serviceMock: NewsServiceFake!
+    var serviceFake: NewsServiceFake!
     var viewModel: NewsListViewModel!
 
     override func setUp() {
         super.setUp()
         viewController = NewsListViewController()
-        serviceMock = NewsServiceFake()
-        viewModel = NewsListViewModel(newsService: serviceMock)
+        serviceFake = NewsServiceFake()
+        viewModel = NewsListViewModel(newsService: serviceFake)
         viewController.viewModel = viewModel
     }
     
     override func tearDown() {
         viewController = nil
-        serviceMock = nil
+        serviceFake = nil
         viewModel = nil
         super.tearDown()
     }
 
     func testNetworkAlert_whenInvalidURL_showAlert() {
-        serviceMock.errorToThrow = .invalidURL
+        serviceFake.errorToThrow = .invalidURL
         
         viewModel.loadNews()
 
@@ -41,7 +41,7 @@ class NetworkErrorAlertTests: XCTestCase {
     }
     
     func testNetworkAlert_whenInvalidResponse_showAlert() {
-        serviceMock.errorToThrow = .invalidResponse
+        serviceFake.errorToThrow = .invalidResponse
         
         viewModel.loadNews()
 
@@ -52,7 +52,7 @@ class NetworkErrorAlertTests: XCTestCase {
     }
     
     func testNetworkAlert_whenInvalidData_showAlert() {
-        serviceMock.errorToThrow = .invalidData
+        serviceFake.errorToThrow = .invalidData
         
         viewModel.loadNews()
 

@@ -1,25 +1,15 @@
 {
   "configurations" : [
     {
-      "id" : "9D90382E-7569-4195-AA17-33F0974B959E",
-      "name" : "Test Scheme Action",
+      "id" : "04D6F0D2-1263-4EE1-85EC-613224CF1F96",
+      "name" : "Configuration 1",
       "options" : {
 
       }
     }
   ],
   "defaultOptions" : {
-    "environmentVariableEntries" : [
-      {
-        "key" : "IDEPreferLogStreaming",
-        "value" : "YES"
-      }
-    ],
-    "targetForVariableExpansion" : {
-      "containerPath" : "container:Bornlogic_iOSChallenge.xcodeproj",
-      "identifier" : "2BA64F142BF0DFF10074C3B4",
-      "name" : "Bornlogic_iOSChallenge"
-    }
+    "testTimeoutsEnabled" : true
   },
   "testTargets" : [
     {

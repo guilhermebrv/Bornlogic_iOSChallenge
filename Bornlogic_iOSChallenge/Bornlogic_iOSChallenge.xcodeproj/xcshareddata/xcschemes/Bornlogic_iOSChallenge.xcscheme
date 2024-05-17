@@ -30,7 +30,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:Bornlogic_iOSChallenge.xctestplan"
+            reference = "container:Bornlogic_iOSChallengeTests/Bornlogic_iOSChallenge.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -83,6 +83,11 @@
          <EnvironmentVariable
             key = "IDEPreferLogStreaming"
             value = "YES"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

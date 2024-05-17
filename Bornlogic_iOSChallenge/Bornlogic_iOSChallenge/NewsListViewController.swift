@@ -9,8 +9,8 @@ import UIKit
 
 class NewsListViewController: UIViewController {
     private var listView: NewsListView?
+    private(set) var alert: UIAlertController?
     public var viewModel = NewsListViewModel(newsService: NewsService())
-    public var alert: UIAlertController?
     
     override func loadView() {
         super.loadView()
