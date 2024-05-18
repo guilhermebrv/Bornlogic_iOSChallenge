@@ -21,5 +21,5 @@ protocol DataParsingDelegate {
 }
 
 protocol ImageServiceDelegate {
-    func downloadImageAsync(from urlString: String) async -> UIImage?
+    func downloadImageAsync(from urlString: String) async throws -> UIImage?
 }

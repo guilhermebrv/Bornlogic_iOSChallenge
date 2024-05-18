@@ -8,13 +8,8 @@
 import Foundation
 
 struct APIEndpointHandler: EndpointDelegate {
-    static var mockedURL: URL?
 
     func getEndpointURL(for newsType: EndpointNewsType?, country: EndpointCountries?, category: EndpointCategory?, with apiKey: String) -> URL? {
-        if let url = APIEndpointHandler.mockedURL {
-            return url
-        }
-        
         let endpointBase = EndpointBase.newsAPI.url
         guard let endpointPath = newsType?.option else { return nil }
 

@@ -97,11 +97,19 @@ class NewsServiceTests: XCTestCase {
         }
     }
     
+    func testFetchImage_Success_ShouldReturnImage() async {
+        let imageService = ImageService(session: session)
+        
+        let image = await imageService.downloadImageAsync(from: "https://nypost.com/wp-content/uploads/sites/2/2024/05/81908277.jpg?quality=75&strip=all&w=1024")
+        
+        XCTAssertNotNil(image, "Image should not be nil")
+    }
+    
 }
 
 extension NewsServiceTests {
     private func loadTestData() -> Data? {
-        guard let url = Bundle(for: type(of: self)).url(forResource: "ValidNewsData", withExtension: "json"),
+        guard let url = Bundle(for: type(of: self)).url(forResource: "ValidNewsDataJSON", withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
             XCTFail("Error loading test data file")
             return nil

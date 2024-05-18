@@ -30,15 +30,7 @@ class NewsListViewModelDataTests: XCTestCase {
     }
 
     func testFetchData_Success_UpdatesDataAndNotifiesDelegate() {
-        let validData = [Article(source: Source(id: "id", name: "name"), 
-                                 author: "author",
-                                 title: "title",
-                                 description: "description", 
-                                 url: "url",
-                                 urlToImage: "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2152436289.jpg?c=16x9&q=w_800,c_fill",
-                                 publishedAt: Date.now,
-                                 content: "content")]
-                
+        let validData = ValidNewsData.articles
         fakeService.fakeData = NewsData(articles: validData)
 
         viewModel.loadNews()
@@ -57,6 +49,7 @@ class NewsListViewModelDataTests: XCTestCase {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             XCTAssertTrue(self.mockDelegate.didCallNewsDataDidFailWithError, "The delegate should be notified when there was an error.")
+            XCTAssertEqual(self.mockDelegate.lastError, self.fakeService.errorToThrow, "The error should be .invalidURL.")
             XCTAssertNil(self.viewModel.newsData, "The data in the view model should be nil.")
         }
     }
@@ -68,6 +61,7 @@ class NewsListViewModelDataTests: XCTestCase {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             XCTAssertTrue(self.mockDelegate.didCallNewsDataDidFailWithError, "The delegate should be notified when there was an error.")
+            XCTAssertEqual(self.mockDelegate.lastError, self.fakeService.errorToThrow, "The error should be .invalidResponse.")
             XCTAssertNil(self.viewModel.newsData, "The data in the view model should be nil.")
         }
     }
@@ -79,42 +73,18 @@ class NewsListViewModelDataTests: XCTestCase {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             XCTAssertTrue(self.mockDelegate.didCallNewsDataDidFailWithError, "The delegate should be notified when there was an error.")
+            XCTAssertEqual(self.mockDelegate.lastError, self.fakeService.errorToThrow, "The error should be .invalidData.")
             XCTAssertNil(self.viewModel.newsData, "The data in the view model should be nil.")
         }
     }
     
-    func testFilterData_RemovesRemovedArticles() {
-        let articles = [
-            Article(source: Source(id: "id", name: "name"),
-                                author: "author",
-                                title: "title",
-                                description: "description",
-                                url: "url",
-                                urlToImage: "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2152436289.jpg?c=16x9&q=w_800,c_fill",
-                                publishedAt: Date.now,
-                                content: "content"),
-            Article(source: Source(id: "id", name: "name"),
-                                author: "[Removed]",
-                                title: "[Removed]",
-                                description: "[Removed]",
-                                url: "[Removed]",
-                                urlToImage: nil,
-                                publishedAt: Date.now,
-                                content: "[Removed]"),
-            Article(source: Source(id: "id", name: "name"),
-                                author: "author",
-                                title: "title",
-                                description: "description",
-                                url: "url",
-                                urlToImage: "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2152436289.jpg?c=16x9&q=w_800,c_fill",
-                                publishedAt: Date.now,
-                                content: "content"),
-        ]
-        
+    func testFilterData_IfRemovedArticle_RemoveFromData() {
+        let articles = ValidNewsData.articles
         let newsData = NewsData(articles: articles)
+        
         let filteredArticles = viewModel.filterData(on: newsData, containingOnTitle: "[Removed]")
         
-        XCTAssertEqual(filteredArticles?.count, 2, "Should filter out articles with '[Removed]' in the title")
+        XCTAssertEqual(filteredArticles?.count, 3, "Should filter out articles with '[Removed]' in the title")
         XCTAssertFalse(filteredArticles?.contains(where: { $0.title == "[Removed]" }) ?? true, "No article should have '[Removed]' in the title")
     }
 }
@@ -136,27 +106,13 @@ class NewsListViewModelTableViewTests: XCTestCase {
     }
     
     func testTableView_GetNumberOfRows_ReturnsCorrectCount() {
-        viewModel.newsData = [Article(source: Source(id: "id", name: "name"),
-                                      author: "author",
-                                      title: "title", 
-                                      description: "description",
-                                      url: "url",
-                                      urlToImage: "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2152436289.jpg?c=16x9&q=w_800,c_fill",
-                                      publishedAt: Date.now,
-                                      content: "content")]
+        viewModel.newsData = ValidNewsData.articles
 
         XCTAssertEqual(viewModel.numberOfRowsInSection, viewModel.newsData?.count, "The number of rows should be the same as the number of articles in the data.")
     }
     
     func testTableView_GetCellForRowAt_ReturnsCorrectCell() {
-        viewModel.newsData = [Article(source: Source(id: "id", name: "name"),
-                                      author: "author",
-                                      title: "title",
-                                      description: "description",
-                                      url: "url",
-                                      urlToImage: "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2152436289.jpg?c=16x9&q=w_800,c_fill",
-                                      publishedAt: Date.now,
-                                      content: "content")]
+        viewModel.newsData = ValidNewsData.articles
         
         let tableView = UITableView()
         tableView.register(NewsListTableViewCell.self, forCellReuseIdentifier: NewsListTableViewCell.identifier)
@@ -164,16 +120,5 @@ class NewsListViewModelTableViewTests: XCTestCase {
         let cell = viewModel.getCellForRow(on: tableView, at: IndexPath(row: 0, section: 0)) as? NewsListTableViewCell
         
         XCTAssertEqual(cell?.cellView.titleLabel.text, viewModel.newsData?.first?.title, "The cell should display the correct title of the article that is stored on the data variable.")
-    }
-}
-
-extension NewsListViewModelDataTests {
-    private func loadTestData() -> Data? {
-        guard let url = Bundle(for: type(of: self)).url(forResource: "ValidNewsData", withExtension: "json"),
-              let data = try? Data(contentsOf: url) else {
-            XCTFail("Error loading test data file")
-            return nil
-        }
-        return data
     }
 }

@@ -11,6 +11,13 @@ class NewsDetailsTableViewCell: UITableViewCell {
     static let identifier = String(describing: NewsDetailsTableViewCell.self)
     private var imageService: ImageService?
     private let cellView = NewsDetailsCellView()
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cellView.contentLabel.text = nil
+        cellView.dateLabel.text = nil
+        cellView.imageView.image = nil
+    }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
