@@ -14,7 +14,7 @@ protocol NewsViewModelDelegate: AnyObject {
 
 class NewsListViewModel: TableViewMethodsDelegate {
     weak var delegate: NewsViewModelDelegate?
-    var newsData: [Article]?
+    public var newsData: [Article]?
     private let newsService: NewsServiceDelegate
 
     init(newsService: NewsServiceDelegate) {
@@ -39,7 +39,7 @@ class NewsListViewModel: TableViewMethodsDelegate {
         }
     }
     
-    internal func filterData(on data: NewsData?, containingOnTitle expression: String) -> [Article]? {
+    public func filterData(on data: NewsData?, containingOnTitle expression: String) -> [Article]? {
         return data?.articles.filter { $0.title != expression }
     }
     

@@ -98,7 +98,7 @@ class NewsServiceTests: XCTestCase {
     }
     
     func testFetchImage_Success_ShouldReturnImage() async {
-        let imageService = ImageService(session: session)
+        let imageService = ImageService()
         
         let image = await imageService.downloadImageAsync(from: "https://nypost.com/wp-content/uploads/sites/2/2024/05/81908277.jpg?quality=75&strip=all&w=1024")
         

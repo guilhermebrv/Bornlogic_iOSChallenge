@@ -13,7 +13,7 @@ enum EndpointBase {
     var url: String {
         switch self {
         case .newsAPI:
-            return "https://newsapi.org"
+            return Constants.BASE_URL
         }
     }
 }

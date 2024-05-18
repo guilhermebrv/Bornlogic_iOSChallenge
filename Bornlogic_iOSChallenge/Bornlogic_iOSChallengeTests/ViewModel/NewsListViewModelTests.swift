@@ -113,7 +113,6 @@ class NewsListViewModelTableViewTests: XCTestCase {
     
     func testTableView_GetCellForRowAt_ReturnsCorrectCell() {
         viewModel.newsData = ValidNewsData.articles
-        
         let tableView = UITableView()
         tableView.register(NewsListTableViewCell.self, forCellReuseIdentifier: NewsListTableViewCell.identifier)
         

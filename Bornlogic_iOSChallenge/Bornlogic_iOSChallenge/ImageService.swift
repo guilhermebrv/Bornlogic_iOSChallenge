@@ -8,12 +8,6 @@
 import UIKit
 
 struct ImageService: ImageServiceDelegate {
-    private let session: URLSession
-
-    init(session: URLSession = .shared) {
-        self.session = session
-    }
-    
     func downloadImageAsync(from urlString: String) async -> UIImage? {
         guard let url = URL(string: urlString) else { return nil }
         

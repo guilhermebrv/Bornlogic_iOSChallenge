@@ -11,6 +11,7 @@ class NewsListViewController: UIViewController {
     private var listView: NewsListView?
     private(set) var alert: UIAlertController?
     public var viewModel = NewsListViewModel(newsService: NewsService())
+    static var firstTimeAccessingDetails = true
     
     override func loadView() {
         super.loadView()
@@ -23,11 +24,12 @@ class NewsListViewController: UIViewController {
         listView?.spinner.startAnimating()
         signProtocols()
         viewModel.loadNews()
+        firstMessages()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        configureNavBar(title: Constants.MAIN_TITLE)
+        configNavBar(title: Constants.MAIN_TITLE)
     }
 }
 
@@ -81,7 +83,7 @@ extension NewsListViewController: TableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let data = viewModel.newsData?[indexPath.row] else { return }
         
-        let detailsScreen = DetailsViewController(article: data)
+        let detailsScreen = DetailsViewController(article: data, firstTimeAccessing: NewsListViewController.firstTimeAccessingDetails)
         navigationController?.pushViewController(detailsScreen, animated: true)
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    public func configureNavBar(title: String) {
+    public func configNavBar(title: String) {
         setNavBarTitle(with: title)
         setNavBarAppearance()
     }
@@ -25,5 +25,43 @@ extension UIViewController {
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+}
+
+extension UIViewController {
+    func firstMessages() {
+        let messages = [
+            "Desafio iniciado com sucesso.",
+            "Verificando os requisitos do desafio...",
+        ]
+        
+        for (index, message) in messages.enumerated() {
+            let delay = Double(index) * 1.0
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                print(message)
+            }
+        }
+    }
+    
+    func finalMessages() {
+        let devName = "Guilherme Viana"
+        let bestStack = "iOS"
+        let bestCompany = "Bornlogic"
+        
+        let messages = [
+            "Todos os requisitos foram atendidos.",
+            "Finalizando o desafio...",
+            "Desafio foi concluído com sucesso.",
+            "O dev \(devName) pode ser adicionado à equipe de desenvolvedores \(bestStack) da \(bestCompany) ;)"
+        ]
+        
+        for (index, message) in messages.enumerated() {
+            let delay = Double(index) * 1.0
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                print(message)
+            }
+        }
     }
 }

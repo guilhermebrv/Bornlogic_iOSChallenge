@@ -39,7 +39,7 @@ extension NewsDetailsCellView: ConfigurableView {
     }
     
     func configure(with data: Article?) {
-        dateLabel.text = data?.publishedAt.formatted()
+        dateLabel.text = data?.publishedAt?.formatted()
         contentLabel.text = data?.content
     }
 }

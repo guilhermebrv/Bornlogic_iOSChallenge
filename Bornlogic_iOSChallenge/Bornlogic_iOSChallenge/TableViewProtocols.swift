@@ -9,8 +9,8 @@ import UIKit
 
 protocol TableViewMethodsDelegate {
     var numberOfRowsInSection: Int { get }
-    func getCellForRow(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell
     var heightForRowAt: CGFloat { get }
+    func getCellForRow(on tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell
 }
 
 protocol TableViewDelegate: UITableViewDelegate, UITableViewDataSource {

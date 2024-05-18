@@ -10,10 +10,12 @@ import UIKit
 class DetailsViewController: UIViewController {
     private var articleData: Article
     private var detailsView: DetailsView?
-    private var viewModel: DetailsViewModel?
+    private var viewModel: DetailsViewModel?   
+    private var firstTimeAccessing: Bool?
     
-    init(article: Article) {
+    init(article: Article, firstTimeAccessing: Bool) {
         self.articleData = article
+        self.firstTimeAccessing = firstTimeAccessing
         self.viewModel = DetailsViewModel(article: articleData)
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,6 +35,10 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         signProtocols()
         navigationController?.navigationBar.prefersLargeTitles = false
+        if firstTimeAccessing == true {
+            finalMessages()
+            NewsListViewController.firstTimeAccessingDetails = false
+        }
     }
 }
 

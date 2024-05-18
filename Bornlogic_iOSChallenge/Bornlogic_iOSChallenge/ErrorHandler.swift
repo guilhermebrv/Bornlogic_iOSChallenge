@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum NewsError: Error, Equatable {
+enum NewsError: Error {
     case invalidURL
     case invalidResponse
     case invalidData

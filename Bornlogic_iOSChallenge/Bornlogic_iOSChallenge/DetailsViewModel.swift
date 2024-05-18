@@ -8,8 +8,7 @@
 import UIKit
 
 class DetailsViewModel: TableViewMethodsDelegate {
-    
-    var articleData: Article?
+    private var articleData: Article?
     
     init(article: Article) {
         articleData = article

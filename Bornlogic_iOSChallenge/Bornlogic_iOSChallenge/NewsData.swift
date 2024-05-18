@@ -12,15 +12,15 @@ struct NewsData: Decodable {
 }
 
 struct Article: Decodable {
-    let source: Source
+    let source: Source?
     let author, title, description: String?
-    let url: String
+    let url: String?
     let urlToImage: String?
-    let publishedAt: Date
+    let publishedAt: Date?
     let content: String?
 }
 
 struct Source: Decodable {
     let id: String?
-    let name: String
+    let name: String?
 }
